@@ -26,7 +26,7 @@ spec:
       value: /opt/nuclio/sam
 
   build:
-    image: cvat.pth.facebookresearch.sam.vit_h
+    image: cvat.pth.facebookresearch.sam.vit_b
     baseImage: ubuntu:22.04
 
     directives:
@@ -53,7 +53,7 @@ spec:
           value: pip3 install git+https://github.com/facebookresearch/segment-anything.git
       # download sam weights
         - kind: RUN
-          value: curl -O https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+          value: curl -O https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
       # map pip3 and python3 to pip and python
         - kind: RUN
           value: ln -s /usr/bin/pip3 /usr/local/bin/pip && ln -s /usr/bin/python3 /usr/bin/python

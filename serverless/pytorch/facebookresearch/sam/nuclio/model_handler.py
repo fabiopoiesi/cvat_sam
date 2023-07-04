@@ -29,8 +29,8 @@ def convert_mask_to_polygon(mask):
 class ModelHandler:
     def __init__(self):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        self.sam_checkpoint = "/opt/nuclio/sam/sam_vit_h_4b8939.pth"
-        self.model_type = "vit_h"
+        self.sam_checkpoint = "/opt/nuclio/sam/sam_vit_b_01ec64.pth"
+        self.model_type = "vit_b"
         self.latest_image = None
         sam_model = sam_model_registry[self.model_type](checkpoint=self.sam_checkpoint)
         sam_model.to(device=self.device)
